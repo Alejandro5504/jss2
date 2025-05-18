@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body> 
+
+<a href="ejercicio.html"> Aqui</a>
+
+
+  <form>
+    <h1>Gastos de la casa</h1>
+    <p>
+      <mark>Todo lo que viene del HTML es un string (texto) y hay que convertirlo</mark>
+    </p>
+    <p><label for="internet">Internet: <input type="number" id="internet" value="43"></label></p>
+    <p><label for="luz">Luz: <input type="number" id="luz"></label></p>
+    <p><label for="agua">Agua:<input type="number" id="agua"></label></p>
+    <p><label for="gas">Gas: <input type="number" id="gas"></label></p>
+    <p><label for="alquiler">Alquiler: <input type="number" id="alquiler"></label></p>
+    <p><button type="button" onclick="calcular()"> Calcular Gastos </button></p>
+    <p id="totalGastos"> </p>
+  </form>
+
+  <script>
+    // variables de objetos (la defino con const para indicar que su contenido no varía)
+    const INTERNET = document.getElementById("internet"); // Referencia a el campo de formulario
+    const LUZ = document.getElementById("luz");
+    const AGUA = document.getElementById("agua");
+    const GAS = document.getElementById("gas");
+    const ALQUILER = document.getElementById("alquiler");
+    const RESULTADO = document.getElementById("totalGastos"); // Referencia al párrafo totalGastos
+    console.log(INTERNET.value);
+
+    function calcular() {
+      let gastosInternet = Number(INTERNET.value);
+      let gastosLuz = Number(LUZ.value);
+      let gastosAgua = Number(AGUA.value);
+      let gastosGas = Number(GAS.value);
+      let gastosAlquiler = Number(ALQUILER.value);
+
+      let total = gastosInternet + gastosLuz + gastosAgua + gastosGas + gastosAlquiler;
+
+      RESULTADO.innerHTML = "Los gastos de tu casa son " + total;
+    }
+
+  </script>
+
+</body>
+</html>
